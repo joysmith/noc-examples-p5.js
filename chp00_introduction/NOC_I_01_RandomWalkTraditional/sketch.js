@@ -5,9 +5,9 @@
 let walker;
 
 function setup() {
-  createCanvas(640, 360);
+  createCanvas(windowWidth, windowHeight);
   walker = new Walker();
-  background(127);
+  background(150);
 }
 
 function draw() {
@@ -15,19 +15,24 @@ function draw() {
   walker.render();
 }
 
+// --------CLASS Template---------
 class Walker {
   constructor() {
+    // set coordinate to center
     this.x = width / 2;
     this.y = height / 2;
   }
 
   render() {
     stroke(0);
-    point(this.x, this.y);
+    //point(this.x, this.y);
+    circle(this.x, this.y, 5);
   }
 
   step() {
-    var choice = floor(random(4));
+    var choice = floor(random(4)); // floor to convert float into integer
+
+    // pick 1 direction out of 4, each frame
     if (choice === 0) {
       this.x++;
     } else if (choice == 1) {
@@ -37,6 +42,7 @@ class Walker {
     } else {
       this.y--;
     }
+
     this.x = constrain(this.x, 0, width - 1);
     this.y = constrain(this.y, 0, height - 1);
   }
