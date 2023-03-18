@@ -6,17 +6,18 @@
 // Normalizing a vector sets its length to 1.
 
 function setup() {
-  createCanvas(640,360);
+  createCanvas(640, 360);
 }
 
 function draw() {
   background(51);
 
   // A vector that points to the mouse position
-  let mouse = createVector(mouseX,mouseY);
+  let mouse = createVector(mouseX, mouseY);
   // A vector that points to the center of the window
-  let center = createVector(width/2,height/2);
+  let center = createVector(width / 2, height / 2);
   // Subtract center from mouse which results in a vector that points from center to mouse
+  // for thinking purpose- Distance vector
   mouse.sub(center);
 
   // Normalize the vector
@@ -25,9 +26,9 @@ function draw() {
   // Multiply its length by 50
   mouse.mult(150);
 
-  translate(width/2,height/2);
+  translate(width / 2, height / 2);
   // Draw the resulting vector
   stroke(255);
   strokeWeight(2);
-  line(0,0,mouse.x,mouse.y);
+  line(0, 0, mouse.x, mouse.y);
 }

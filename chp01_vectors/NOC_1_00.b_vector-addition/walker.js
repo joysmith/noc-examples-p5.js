@@ -39,7 +39,8 @@ class Walker {
   }
 
   update() {
-    // perform vector addition on position vector with velocity vector
+    // add this obj velocity to this obj position
+    // add vel to pos
     this.pos.add(this.vel);
   }
 
