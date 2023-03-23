@@ -2,3 +2,6 @@
 *.*~
 ### VisualStudioCode ###
 .vscode/*
+
+# ignore book folder
+Books
